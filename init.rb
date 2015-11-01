@@ -2,7 +2,7 @@ require_dependency 'redmine_percent_done'
 
 Redmine::Plugin.register :redmine_percent_done do
   name 'Redmine Issue Done Ratio Plugin'
-  url  'http://redmine-search.com/percent-done'
+  url  'http://redmine-search.com/redmine-issue-done-ratio-plugin'
 
   description 'Automatic issue done ratios for selected issue statuses, keeping the field editable manually.'
 
