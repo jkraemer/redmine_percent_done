@@ -1,0 +1,6 @@
+<% for status in IssueStatus.all do %>
+  <p>
+    <label for="settings_status-<%= status.id %>"><%= status.name %></label>
+    <%= select_tag "settings[status-#{status.id}]", options_from_collection_for_select([[l(:label_no_change_option), '']] + (0..10).to_a.collect {|r| ["#{r*10} %", r*10] }, :last, :first, @settings["status-#{status.id}"]) %>
+  </p>
+<% end %>

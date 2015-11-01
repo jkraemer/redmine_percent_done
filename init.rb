@@ -12,6 +12,8 @@ Redmine::Plugin.register :redmine_percent_done do
   version '1.0.0'
 
   requires_redmine version_or_higher: '2.6.0'
+
+  settings partial: 'settings/redmine_percent_done', default: {}
 end
 
 Rails.configuration.to_prepare do
