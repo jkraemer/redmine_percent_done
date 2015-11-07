@@ -13,7 +13,7 @@ class PercentDoneSettingsTest < ActionController::TestCase
     assert_response :success
     IssueStatus.all.each do |status|
       assert_select 'label', status.name
-      assert_select "select[name=\"settings[status-#{status.id}]\"]"
+      assert_select 'select[name=?]', "settings[status-#{status.id}]"
     end
   end
 
