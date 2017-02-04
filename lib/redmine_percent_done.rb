@@ -1,6 +1,7 @@
 module RedminePercentDone
+
   def self.setup
-    IssuePatch.apply
+    ::RedminePercentDone::IssuePatch.apply
   end
 
   def self.percent_done_for_status_id(id)
@@ -8,4 +9,5 @@ module RedminePercentDone
       percent_done.to_i
     end
   end
+
 end
