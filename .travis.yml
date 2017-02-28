@@ -14,9 +14,15 @@ addons:
 
 env:
   - REDMINE_VER=2.6-stable
-  - REDMINE_VER=3.2-stable
   - REDMINE_VER=3.3-stable
   - REDMINE_VER=master
+
+matrix:
+  exclude:
+  - rvm: 2.4.0
+    env: REDMINE_VER=2.6-stable
+  - rvm: 2.4.0
+    env: REDMINE_VER=3.3-stable
 
 install: "echo skip bundle install"
 
