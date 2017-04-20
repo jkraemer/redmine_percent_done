@@ -1,3 +1,4 @@
+# coding: UTF-8
 require_dependency 'redmine_percent_done'
 
 Redmine::Plugin.register :redmine_percent_done do
