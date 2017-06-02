@@ -24,6 +24,8 @@ matrix:
     env: REDMINE_VER=2.6-stable
   - rvm: 2.4.0
     env: REDMINE_VER=3.3-stable
+  - rvm: jruby-9.1.10.0
+    env: REDMINE_VER=master
 
 install: "echo skip bundle install"
 
