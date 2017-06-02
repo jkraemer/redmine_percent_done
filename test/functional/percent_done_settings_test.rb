@@ -17,5 +17,19 @@ class PercentDoneSettingsTest < ActionController::TestCase
     end
   end
 
+  test 'should store settings' do
+    settings = {}
+    IssueStatus.all.each do |status|
+      settings["status-#{status.id}"] = '20'
+    end
+
+    post :plugin, id: 'redmine_percent_done', settings: settings
+    assert_response :redirect
+    assert settings = Setting.plugin_redmine_percent_done
+    settings.values.each do |v|
+      assert_equal v, '20'
+    end
+  end
+
 end
 
