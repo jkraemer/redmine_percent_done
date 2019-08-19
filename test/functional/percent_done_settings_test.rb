@@ -9,7 +9,7 @@ class PercentDoneSettingsTest < ActionController::TestCase
   end
 
   test 'should render settings' do
-    get :plugin, id: 'redmine_percent_done'
+    get :plugin, params: { id: 'redmine_percent_done' }
     assert_response :success
     IssueStatus.all.each do |status|
       assert_select 'label', status.name
@@ -23,7 +23,7 @@ class PercentDoneSettingsTest < ActionController::TestCase
       settings["status-#{status.id}"] = '20'
     end
 
-    post :plugin, id: 'redmine_percent_done', settings: settings
+    post :plugin, params: { id: 'redmine_percent_done', settings: settings }
     assert_response :redirect
     assert settings = Setting.plugin_redmine_percent_done
     settings.values.each do |v|
