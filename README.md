@@ -1,4 +1,4 @@
-The Redmine Issue Done Ratio Plugin  [![Build Status](https://travis-ci.org/jkraemer/redmine_percent_done.svg?branch=master)](https://travis-ci.org/jkraemer/redmine_percent_done)
+The Redmine Issue Done Ratio Plugin  [![Test with Redmine](https://github.com/jkraemer/redmine_percent_done/actions/workflows/redmine.yml/badge.svg)](https://github.com/jkraemer/redmine_percent_done/actions/workflows/redmine.yml)
 ===================================
 
 This plugin allows to enforce a certain setting for the `done_ratio` issue
