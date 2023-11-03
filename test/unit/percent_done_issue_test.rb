@@ -3,7 +3,7 @@ require File.expand_path('../../test_helper', __FILE__)
 class PercentDoneIssueTest < ActiveSupport::TestCase
   fixtures :projects, :enabled_modules, :issues, :users,
     :members, :member_roles, :roles, :trackers, :projects_trackers,
-    :issue_statuses, :enumerations, :journals
+    :issue_statuses, :enumerations, :journals, :versions
 
   setup do
     @new = IssueStatus.find 1
@@ -46,7 +46,7 @@ class PercentDoneIssueTest < ActiveSupport::TestCase
   test 'should not change done ratio when invalid' do
     issue = Issue.find 1
     assert_equal 0, issue.done_ratio
-    assert !(issue.update_attributes status_id: 3, subject: '')
+    assert !(issue.update status_id: 3, subject: '')
     assert_equal 0, issue.done_ratio
   end
 
@@ -77,7 +77,7 @@ class PercentDoneIssueTest < ActiveSupport::TestCase
   test 'should not change done ratio if manually set' do
     issue = Issue.find 2
     assert_equal 30, issue.done_ratio
-    assert issue.update_attributes status_id: 1, done_ratio: 10
+    issue.update! status_id: 1, done_ratio: 10
     issue.reload
     assert_equal 10, issue.done_ratio
   end

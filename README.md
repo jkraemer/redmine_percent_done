@@ -29,7 +29,7 @@ tracking_.
 License
 -------
 
-Copyright (C) 2015 - 2017 [Jens Krämer](https://jkraemer.net)
+Copyright (C) 2015 - 2023 [Jens Krämer](https://jkraemer.net)
 
 The Issue Done Ratio plugin for Redmine is free software: you can redistribute
 it and/or modify it under the terms of the GNU General Public License as
