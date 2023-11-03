@@ -1,0 +1,32 @@
+name: Test with Redmine
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        redmine:
+          - '5.0'
+          - '5.1'
+        ruby:
+          - '3.0'
+          - '3.1'
+        database:
+          - postgresql
+          - mysql
+    steps:
+    - uses: eXolnet/action-redmine-plugin@v1
+      with:
+        plugin_name: redmine_percent_done
+        redmine_version: ${{ matrix.redmine }}
+        ruby_version: ${{ matrix.ruby }}
+        database: ${{ matrix.database }}
+
